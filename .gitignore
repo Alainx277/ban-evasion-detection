@@ -1,0 +1,9 @@
+builddir
+releasedir
+bin
+obj
+.vscode
+generated
+vpns.txt
+release.zip
+*.debugtarget

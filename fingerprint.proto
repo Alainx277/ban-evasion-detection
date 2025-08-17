@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package anticheat;
+
+message Fingerprint {
+    bytes registryKey = 1;
+    repeated bytes monitorIds = 2;
+    repeated bytes manufacturerCertificates = 3;
+    repeated bytes additionalCertificates = 4;
+    repeated bytes certificateChain = 14;
+    bytes derivedKeyName = 5;
+    repeated bytes macAddresses = 6;
+    repeated bytes diskSerials = 7;
+    repeated bytes volumeSerials = 8;
+    bytes cpuSerial = 9;
+    bytes biosSerial = 10;
+    bool kernelHooks = 11;
+    bool testSigning = 12;
+    bytes kernelBiosSerial = 13;
+}
+
+message FingerprintChallenge {
+    bytes tpmIntegrity = 1;
+    bytes tpmChallenge = 2;
+    bytes tpmSecret = 3;
+
+    bytes registryKey = 4;
+    bytes cpuSerial = 5;
+    bytes biosSerial = 6;
+    repeated bytes monitorIds = 7;
+    repeated bytes macAddresses = 8;
+    repeated bytes diskSerials = 9;
+    repeated bytes volumeSerials = 10;
+}
+
+message FingerprintProof {
+    bytes tpmChallenge = 1;
+
+    bytes registryKey = 4;
+    bytes cpuSerial = 5;
+    bytes biosSerial = 6;
+    repeated bytes monitorIds = 7;
+    repeated bytes macAddresses = 8;
+    repeated bytes diskSerials = 9;
+    repeated bytes volumeSerials = 10;
+}

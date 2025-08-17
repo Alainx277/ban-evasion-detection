@@ -1,0 +1,39 @@
+#include <winres.h>
+
+///////////////////////////////////////////////////////////////////////////////
+// Version Information
+///////////////////////////////////////////////////////////////////////////////
+1 VERSIONINFO
+ FILEVERSION 1,0,0,0            // Major, minor, revision, build
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L                 // VS_FF_DEBUG if in debug build
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x00040004L             // VOS_NT, VOS__WINDOWS32
+ FILETYPE 0x00000002L           // VFT_DRV
+ FILESUBTYPE 0x00000000L        // VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        // 0409 = U.S. English, 04B0 = Unicode
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName",      "My Company\0"
+            VALUE "FileDescription",  "MyDriver Kernel-Mode Driver\0"
+            VALUE "FileVersion",      "1.0.0.0\0"
+            VALUE "InternalName",     "MyDriver\0"
+            VALUE "OriginalFilename", "mydriver.sys\0"
+            VALUE "ProductName",      "MyDriver\0"
+            VALUE "ProductVersion",   "1.0.0.0\0"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        // Language and codepage
+        VALUE "Translation", 0x0409, 1200
+    END
+END

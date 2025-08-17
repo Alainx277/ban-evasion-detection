@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres@sha256:feedab244d0d4cd740debc3a533cd641b2fb7d99c3f056de61972093970da724 # 17.4
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+    ports:
+      - 5432:5432
+ 
+volumes:
+  pgdata:

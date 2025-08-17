@@ -1,0 +1,2 @@
+
+option('tracy_enable', type : 'boolean', value: true, description : 'Enable profiling')
